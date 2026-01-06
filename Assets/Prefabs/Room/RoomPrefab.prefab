@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Room
   column: 0
   line: 0
-  roomData: {fileID: 11400000, guid: 37e5f75383cad554fa8b1a0a37676fd5, type: 2}
+  roomData: {fileID: 11400000, guid: 8d44692f7777d9c46ab3d4afc62fa27f, type: 2}
   roomState: 0
 --- !u!1 &6046233558980135158
 GameObject:
