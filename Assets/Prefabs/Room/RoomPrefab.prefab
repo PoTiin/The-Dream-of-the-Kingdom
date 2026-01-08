@@ -87,6 +87,7 @@ MonoBehaviour:
   line: 0
   roomData: {fileID: 11400000, guid: 8d44692f7777d9c46ab3d4afc62fa27f, type: 2}
   roomState: 0
+  loadRoomEvent: {fileID: 11400000, guid: 2538c8f642dc15d44ab939cf7b6aeb90, type: 2}
 --- !u!1 &6046233558980135158
 GameObject:
   m_ObjectHideFlags: 0

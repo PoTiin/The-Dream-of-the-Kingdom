@@ -8,6 +8,9 @@ public class Room : MonoBehaviour
     public RoomDataSO roomData;
     public RoomState roomState;
 
+    [Header("广播")]
+    public ObjectEventSO loadRoomEvent;
+
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -39,6 +42,7 @@ public class Room : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log($"OnMouseDown被调用: {gameObject.name}");
+        loadRoomEvent.RaiseEvent(roomData, this);
     }
     /// <summary>
     /// 外部创建房间时调用配置房间

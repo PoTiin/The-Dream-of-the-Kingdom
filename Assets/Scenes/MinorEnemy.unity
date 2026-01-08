@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3639ca834ea376f449a87c5d2895d631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinishRoom
+  loadMapEvent: {fileID: 11400000, guid: e5cca0c4030af974895f6c0f524e8e86, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
