@@ -5,6 +5,8 @@ public class MapGenerator : MonoBehaviour
 {
     [Header("地图配置表")]
     public MapConfigSO mapConfig;
+    [Header("地图布局")]
+    public MapLayoutSO mapLayout;
     [Header("预制体")]
     public Room roomPrefab;
     public LineRenderer linePrefab;
@@ -147,5 +149,44 @@ public class MapGenerator : MonoBehaviour
         RoomType roomType = (RoomType)System.Enum.Parse(typeof(RoomType) ,randomOption);
 
         return roomType;
+    }
+
+    private void SaveMap()
+    {
+        mapLayout.mapRoomDataList = new();
+
+        //添加所有已经生成的房间
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            var room = new MapRoomData()
+            {
+                posX = rooms[i].transform.position.x,
+                posY = rooms[i].transform.position.y,
+                colum = rooms[i].column,
+                line = rooms[i].line,
+                roomData = rooms[i].roomData,
+                roomState = rooms[i].roomState
+            };
+
+            mapLayout.mapRoomDataList.Add(room);
+            
+        }
+        //添加所有连线
+        for (int i = 0; i < lines.Count; i++)
+        {
+            var line = new LinePosition()
+            {
+                startPos = lines[i].GetPosition(0),
+                endPos = lines[i].GetPosition(1)
+            };
+
+            mapLayout.linePositionList.Add(line);
+
+        }
+    }
+
+    private void LoadMap()
+    {
+
     }
 }

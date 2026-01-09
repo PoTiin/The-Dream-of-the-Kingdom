@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
   mapConfig: {fileID: 11400000, guid: 5f5a5a40a33bcbc419c696a7c6bde76f, type: 2}
+  mapLayout: {fileID: 11400000, guid: 2c8250dc7cfd2ef4bb8060e4879c323e, type: 2}
   roomPrefab: {fileID: 5704383315753837337, guid: 6be44e66b4a3b184eaa2f30bc882db15, type: 3}
   linePrefab: {fileID: 9116752247174870010, guid: a1a195137d16abb49b81dad022ff6dbc, type: 3}
   border: 1.2
