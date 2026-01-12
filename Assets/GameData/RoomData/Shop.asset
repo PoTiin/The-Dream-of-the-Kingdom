@@ -15,7 +15,7 @@ MonoBehaviour:
   roomIcon: {fileID: 21300000, guid: e1741766f3c3e415787fbdd3e0d30a0e, type: 3}
   roomType: 4
   sceneToLoad:
-    m_AssetGUID: 
+    m_AssetGUID: 4984e0a7536cbb9428f1499edc7c65a9
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

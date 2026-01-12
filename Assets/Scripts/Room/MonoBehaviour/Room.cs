@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour
@@ -7,6 +8,8 @@ public class Room : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public RoomDataSO roomData;
     public RoomState roomState;
+
+    public List<Vector2Int> lineTo = new();
 
     [Header("广播")]
     public ObjectEventSO loadRoomEvent;
@@ -41,8 +44,9 @@ public class Room : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log($"OnMouseDown被调用: {gameObject.name}");
-        loadRoomEvent.RaiseEvent(roomData, this);
+        Debug.Log($"OnMouseDown被调用: {gameObject.name}.{roomState.ToString()}");
+        if(roomState == RoomState.Attainable)
+            loadRoomEvent.RaiseEvent(roomData, this);
     }
     /// <summary>
     /// 外部创建房间时调用配置房间

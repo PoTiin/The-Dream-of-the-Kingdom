@@ -19,4 +19,5 @@ public class MapRoomData
 public class LinePosition
 {
     public Vector3 startPos, endPos;
+    //public SerializeVector3 startPos, endPos;
 }

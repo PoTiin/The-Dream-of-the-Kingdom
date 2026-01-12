@@ -15,6 +15,16 @@ MonoBehaviour:
   m_GroupName: Scenes
   m_GUID: 962f7865418a815489a0ac58cd206eaa
   m_SerializeEntries:
+  - m_GUID: 17d1dd13952eee047bd478d4299fea4c
+    m_Address: EliteEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4984e0a7536cbb9428f1499edc7c65a9
+    m_Address: Shop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4d55342c87def6343a48a6ebaeb91e51
     m_Address: MinorEnemy
     m_ReadOnly: 0
@@ -22,6 +32,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5cf5076a603c0cc438796e3fbe86cafd
     m_Address: Map
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
+    m_Address: Persistent
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbbb6065898100341a1b7905aa83c1a6
+    m_Address: RestRoom
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e136ccfc34f9dc6439686f5ed3d883c0
+    m_Address: Treasure
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

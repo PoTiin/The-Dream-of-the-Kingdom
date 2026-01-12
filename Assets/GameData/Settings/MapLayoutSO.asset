@@ -13,12 +13,162 @@ MonoBehaviour:
   m_Name: MapLayoutSO
   m_EditorClassIdentifier: Assembly-CSharp::MapLayoutSO
   mapRoomDataList:
-  - posX: 0
-    posY: 0
+  - posX: -9.466667
+    posY: 3
     colum: 0
     line: 0
-    roomData: {fileID: 0}
+    roomData: {fileID: 11400000, guid: 8d44692f7777d9c46ab3d4afc62fa27f, type: 2}
+    roomState: 2
+  - posX: -9.466667
+    posY: 0
+    colum: 0
+    line: 1
+    roomData: {fileID: 11400000, guid: 8d44692f7777d9c46ab3d4afc62fa27f, type: 2}
+    roomState: 2
+  - posX: -9.466667
+    posY: -3
+    colum: 0
+    line: 2
+    roomData: {fileID: 11400000, guid: 8d44692f7777d9c46ab3d4afc62fa27f, type: 2}
+    roomState: 2
+  - posX: -6.991
+    posY: 2
+    colum: 1
+    line: 0
+    roomData: {fileID: 11400000, guid: 8171717befe3874478b69341e7aea039, type: 2}
+    roomState: 0
+  - posX: -6.3949323
+    posY: -2
+    colum: 1
+    line: 1
+    roomData: {fileID: 11400000, guid: 8d44692f7777d9c46ab3d4afc62fa27f, type: 2}
+    roomState: 0
+  - posX: -3.897589
+    posY: 3.6
+    colum: 2
+    line: 0
+    roomData: {fileID: 11400000, guid: 327e4575a32eabd46a0b04194804955b, type: 2}
+    roomState: 0
+  - posX: -4.3205366
+    posY: 1.1999998
+    colum: 2
+    line: 1
+    roomData: {fileID: 11400000, guid: 8171717befe3874478b69341e7aea039, type: 2}
+    roomState: 0
+  - posX: -4.1426373
+    posY: -1.2000003
+    colum: 2
+    line: 2
+    roomData: {fileID: 11400000, guid: 327e4575a32eabd46a0b04194804955b, type: 2}
+    roomState: 0
+  - posX: -3.6107125
+    posY: -3.6000004
+    colum: 2
+    line: 3
+    roomData: {fileID: 11400000, guid: 327e4575a32eabd46a0b04194804955b, type: 2}
+    roomState: 0
+  - posX: -0.88826287
+    posY: 3.6
+    colum: 3
+    line: 0
+    roomData: {fileID: 11400000, guid: a017d27fef400a24caea9d96be6565b4, type: 2}
+    roomState: 0
+  - posX: -1.8470271
+    posY: 1.1999998
+    colum: 3
+    line: 1
+    roomData: {fileID: 11400000, guid: b5ae4db1f6bb2894b865ac1cb614c793, type: 2}
+    roomState: 0
+  - posX: -1.7395453
+    posY: -1.2000003
+    colum: 3
+    line: 2
+    roomData: {fileID: 11400000, guid: 327e4575a32eabd46a0b04194804955b, type: 2}
+    roomState: 0
+  - posX: -1.012538
+    posY: -3.6000004
+    colum: 3
+    line: 3
+    roomData: {fileID: 11400000, guid: a017d27fef400a24caea9d96be6565b4, type: 2}
+    roomState: 0
+  - posX: 0.7012565
+    posY: 3
+    colum: 4
+    line: 0
+    roomData: {fileID: 11400000, guid: 8171717befe3874478b69341e7aea039, type: 2}
+    roomState: 0
+  - posX: 1.5387669
+    posY: 0
+    colum: 4
+    line: 1
+    roomData: {fileID: 11400000, guid: b5ae4db1f6bb2894b865ac1cb614c793, type: 2}
+    roomState: 0
+  - posX: 0.6077508
+    posY: -3
+    colum: 4
+    line: 2
+    roomData: {fileID: 11400000, guid: 8171717befe3874478b69341e7aea039, type: 2}
+    roomState: 0
+  - posX: 3.3335328
+    posY: 2
+    colum: 5
+    line: 0
+    roomData: {fileID: 11400000, guid: 327e4575a32eabd46a0b04194804955b, type: 2}
+    roomState: 0
+  - posX: 4.4023466
+    posY: -2
+    colum: 5
+    line: 1
+    roomData: {fileID: 11400000, guid: 327e4575a32eabd46a0b04194804955b, type: 2}
+    roomState: 0
+  - posX: 8.266666
+    posY: 0
+    colum: 6
+    line: 0
+    roomData: {fileID: 11400000, guid: 37e5f75383cad554fa8b1a0a37676fd5, type: 2}
     roomState: 0
   linePositionList:
-  - startPos: {x: 0, y: 0, z: 0}
-    endPos: {x: 0, y: 0, z: 0}
+  - startPos: {x: -6.991, y: 2, z: 0}
+    endPos: {x: -9.466667, y: 3, z: 0}
+  - startPos: {x: -6.3949323, y: -2, z: 0}
+    endPos: {x: -9.466667, y: 0, z: 0}
+  - startPos: {x: -6.991, y: 2, z: 0}
+    endPos: {x: -9.466667, y: -3, z: 0}
+  - startPos: {x: -3.6107125, y: -3.6000004, z: 0}
+    endPos: {x: -6.991, y: 2, z: 0}
+  - startPos: {x: -3.6107125, y: -3.6000004, z: 0}
+    endPos: {x: -6.3949323, y: -2, z: 0}
+  - startPos: {x: -3.897589, y: 3.6, z: 0}
+    endPos: {x: -6.991, y: 2, z: 0}
+  - startPos: {x: -4.3205366, y: 1.1999998, z: 0}
+    endPos: {x: -6.3949323, y: -2, z: 0}
+  - startPos: {x: -4.1426373, y: -1.2000003, z: 0}
+    endPos: {x: -6.991, y: 2, z: 0}
+  - startPos: {x: -1.7395453, y: -1.2000003, z: 0}
+    endPos: {x: -3.897589, y: 3.6, z: 0}
+  - startPos: {x: -1.7395453, y: -1.2000003, z: 0}
+    endPos: {x: -4.3205366, y: 1.1999998, z: 0}
+  - startPos: {x: -1.012538, y: -3.6000004, z: 0}
+    endPos: {x: -4.1426373, y: -1.2000003, z: 0}
+  - startPos: {x: -1.8470271, y: 1.1999998, z: 0}
+    endPos: {x: -3.6107125, y: -3.6000004, z: 0}
+  - startPos: {x: -0.88826287, y: 3.6, z: 0}
+    endPos: {x: -4.3205366, y: 1.1999998, z: 0}
+  - startPos: {x: 1.5387669, y: 0, z: 0}
+    endPos: {x: -0.88826287, y: 3.6, z: 0}
+  - startPos: {x: 0.6077508, y: -3, z: 0}
+    endPos: {x: -1.8470271, y: 1.1999998, z: 0}
+  - startPos: {x: 0.7012565, y: 3, z: 0}
+    endPos: {x: -1.7395453, y: -1.2000003, z: 0}
+  - startPos: {x: 0.6077508, y: -3, z: 0}
+    endPos: {x: -1.012538, y: -3.6000004, z: 0}
+  - startPos: {x: 4.4023466, y: -2, z: 0}
+    endPos: {x: 0.7012565, y: 3, z: 0}
+  - startPos: {x: 3.3335328, y: 2, z: 0}
+    endPos: {x: 1.5387669, y: 0, z: 0}
+  - startPos: {x: 3.3335328, y: 2, z: 0}
+    endPos: {x: 0.6077508, y: -3, z: 0}
+  - startPos: {x: 8.266666, y: 0, z: 0}
+    endPos: {x: 3.3335328, y: 2, z: 0}
+  - startPos: {x: 8.266666, y: 0, z: 0}
+    endPos: {x: 4.4023466, y: -2, z: 0}
