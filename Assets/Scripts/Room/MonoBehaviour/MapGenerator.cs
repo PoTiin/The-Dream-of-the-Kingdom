@@ -195,7 +195,8 @@ public class MapGenerator : MonoBehaviour
                 colum = rooms[i].column,
                 line = rooms[i].line,
                 roomData = rooms[i].roomData,
-                roomState = rooms[i].roomState
+                roomState = rooms[i].roomState,
+                linkTo = rooms[i].lineTo
             };
 
             mapLayout.mapRoomDataList.Add(room);
@@ -225,7 +226,7 @@ public class MapGenerator : MonoBehaviour
             var newRoom = Instantiate(roomPrefab, newPos, Quaternion.identity, transform);
             newRoom.roomState = mapLayout.mapRoomDataList[i].roomState;
             newRoom.SetupRoom(mapLayout.mapRoomDataList[i].colum, mapLayout.mapRoomDataList[i].line, mapLayout.mapRoomDataList[i].roomData);
-
+            newRoom.lineTo = mapLayout.mapRoomDataList[i].linkTo;
             rooms.Add(newRoom);
         }
         //∂¡»°¡¨œﬂ

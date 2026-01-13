@@ -14,6 +14,8 @@ public class MapRoomData
     public int colum, line;
     public RoomDataSO roomData;
     public RoomState roomState;
+
+    public List<Vector2Int> linkTo;
 }
 [System.Serializable]
 public class LinePosition
