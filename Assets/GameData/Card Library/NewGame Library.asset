@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardLibrarySO
   cardLibraryList:
   - cardData: {fileID: 11400000, guid: 4da74319894c8da449756dba8e8ae10b, type: 2}
-    amount: 3
+    amount: 4
   - cardData: {fileID: 11400000, guid: e1842483973e7c84b8a75ccf406d5526, type: 2}
-    amount: 3
+    amount: 4
