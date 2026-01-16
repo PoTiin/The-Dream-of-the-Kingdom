@@ -1326,6 +1326,7 @@ GameObject:
   - component: {fileID: 1911289814654270000}
   - component: {fileID: 6758906108969352615}
   - component: {fileID: 4308422529667817518}
+  - component: {fileID: 4562897785266987942}
   m_Layer: 6
   m_Name: Card
   m_TagString: Untagged
@@ -1426,6 +1427,23 @@ MonoBehaviour:
   typeText: {fileID: 7522144233525097213}
   cardName: {fileID: 7663067144051447157}
   cardData: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalLayerOrder: 0
+  isAnimating: 0
+--- !u!114 &4562897785266987942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527930682202959352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80cd69357a5c2740b8e1417a1d83403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardDragHandler
+  arrowPrefab: {fileID: 2947967025690515099, guid: 885edfb5b6fd5184cba398602b36e540, type: 3}
 --- !u!1 &7705084919200804786
 GameObject:
   m_ObjectHideFlags: 0
