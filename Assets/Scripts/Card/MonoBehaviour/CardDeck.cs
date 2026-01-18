@@ -33,6 +33,7 @@ public class CardDeck : MonoBehaviour
         }
 
         //TODO:洗牌/更新抽牌堆or弃牌堆的数字
+        ShuffleDeck();
     }
     [ContextMenu("TestDrawCard")]
     public void TestDrawCard()
@@ -45,7 +46,12 @@ public class CardDeck : MonoBehaviour
         {
             if(drawDeck.Count == 0)
             {
-                //TODO:洗牌/更新抽牌堆or弃牌堆的数字
+
+                foreach (var item in discardDeck)
+                {
+                    drawDeck.Add(item);
+                }
+                ShuffleDeck();
             }
             CardDataSO currentCardData = drawDeck[0];
             drawDeck.RemoveAt(0);
@@ -59,7 +65,10 @@ public class CardDeck : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// 设置卡牌布局
+    /// </summary>
+    /// <param name="delay"></param>
     private void SetCardLayout(float delay)
     {
         for (int i = 0; i < handCardObjectList.Count; i++)
@@ -78,5 +87,31 @@ public class CardDeck : MonoBehaviour
             currentCard.GetComponent<SortingGroup>().sortingOrder = i;
             currentCard.UpdatePositionRotation(cardTransform.pos, cardTransform.rotation);
         }
+    }
+    /// <summary>
+    /// 洗牌
+    /// </summary>
+    private void ShuffleDeck()
+    {
+        discardDeck.Clear();
+        //TODO:更新UI显示数量
+        for (int i = 0; i < drawDeck.Count; i++)
+        {
+            CardDataSO temp = drawDeck[i];
+            int randomIndex = Random.Range(i, drawDeck.Count);
+            drawDeck[i] = drawDeck[randomIndex];
+            drawDeck[randomIndex] = temp;
+        }
+    }
+    /// <summary>
+    /// 弃牌逻辑
+    /// </summary>
+    /// <param name="card"></param>
+    public void DiscardCard(Card card)
+    {
+        discardDeck.Add(card.cardData);
+        handCardObjectList.Remove(card);
+        cardManager.DiscardCard(card.gameObject);
+        SetCardLayout(0f);
     }
 }
