@@ -16,6 +16,10 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public int originalLayerOrder;
 
     public bool isAnimating = false;
+
+    public Player player;
+    [Header("广播事件")]
+    public ObjectEventSO discardCardEvent;
     private void Start()
     {
         Init(cardData);
@@ -36,6 +40,7 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
             _ => throw new System.NotImplementedException()
         };
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
     }
 
@@ -65,5 +70,15 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     {
         transform.SetPositionAndRotation(originalPosition, originalRotation);
         GetComponent<SortingGroup>().sortingOrder = originalLayerOrder;
+    }
+
+    public void ExecuteCardEffects(CharacterBase from,CharacterBase target)
+    {
+        //TODO:减少对应能量，通知回收卡牌
+        discardCardEvent.RaiseEvent(this, this);
+        foreach (var effect in cardData.effects)
+        {
+            effect.Execute(from, target);
+        }
     }
 }

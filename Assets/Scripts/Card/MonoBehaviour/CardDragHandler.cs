@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -10,6 +11,8 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
     private bool canMove;
 
     private bool canExecute;
+
+    private CharacterBase targetCharacter;
 
     private void Awake()
     {
@@ -42,6 +45,19 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
             currentCard.transform.position = worldPos;
             canExecute = worldPos.y > 1f;
         }
+        else
+        {
+            if (eventData.pointerEnter == null) return;
+
+            if (eventData.pointerEnter.CompareTag("Enemy"))
+            {
+                canExecute = true;
+                targetCharacter = eventData.pointerEnter.GetComponent<CharacterBase>();
+                return;
+            }
+            canExecute = false;
+            targetCharacter = null;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -52,7 +68,7 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
         }
         if (canExecute)
         {
-
+            currentCard.ExecuteCardEffects(currentCard.player, targetCharacter);
         }
         else
         {
