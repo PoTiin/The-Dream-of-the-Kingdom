@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -45,7 +46,6 @@ public class SceneLoadManager : MonoBehaviour
             SceneManager.SetActiveScene(s.Result.Scene);
         }
     }
-
     private async Awaitable UnloadSceneTask()
     {
         await SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

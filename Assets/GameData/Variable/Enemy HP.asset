@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5811e86c4acb8499b887bd5db819ce, type: 3}
   m_Name: Enemy HP
   m_EditorClassIdentifier: Assembly-CSharp::IntVariable
-  maxValue: 0
-  currentValue: 0
+  maxValue: 50
+  currentValue: 46
   ValueChangedEvent: {fileID: 11400000, guid: eb375ea61fe08774ab8ed32826f46d5e, type: 2}
   description: "\u654C\u4EBAHP"
