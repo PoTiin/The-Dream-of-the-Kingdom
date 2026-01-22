@@ -18,7 +18,11 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
     {
         currentCard = GetComponent<Card>();
     }
-
+    private void OnDisable()
+    {
+        canMove = false;
+        canExecute = false;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         switch (currentCard.cardData.cardType)

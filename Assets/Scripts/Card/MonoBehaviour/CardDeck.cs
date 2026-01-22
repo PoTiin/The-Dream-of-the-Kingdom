@@ -16,10 +16,13 @@ public class CardDeck : MonoBehaviour
 
     private List<Card> handCardObjectList = new(); //当前手牌（每回合）
 
+    [Header("事件广播")]
+    public IntEventSO drawCountEvent;
+    public IntEventSO discardCountEvent;
+
     private void Start()
     {
         InitializeDeck();//测试
-        DrawCard(3);
     }
     public void InitializeDeck()
     {
@@ -40,6 +43,13 @@ public class CardDeck : MonoBehaviour
     {
         DrawCard(1);
     }
+    /// <summary>
+    /// 事件监听事件
+    /// </summary>
+    public void NewTurnDrawCards()
+    {
+        DrawCard(4);
+    }
     public void DrawCard(int amount)
     {
         for (int i = 0; i < amount; i++)
@@ -55,7 +65,7 @@ public class CardDeck : MonoBehaviour
             }
             CardDataSO currentCardData = drawDeck[0];
             drawDeck.RemoveAt(0);
-
+            drawCountEvent.RaiseEvent(drawDeck.Count, this);
             var card = cardManager.GetCardObject().GetComponent<Card>();
             card.Init(currentCardData);
             card.transform.position = deckPosition;
@@ -95,6 +105,8 @@ public class CardDeck : MonoBehaviour
     {
         discardDeck.Clear();
         //TODO:更新UI显示数量
+        drawCountEvent.RaiseEvent(drawDeck.Count, this);
+        discardCountEvent.RaiseEvent(discardDeck.Count, this);
         for (int i = 0; i < drawDeck.Count; i++)
         {
             CardDataSO temp = drawDeck[i];
@@ -114,5 +126,6 @@ public class CardDeck : MonoBehaviour
         handCardObjectList.Remove(card);
         cardManager.DiscardCard(card.gameObject);
         SetCardLayout(0f);
+        discardCountEvent.RaiseEvent(discardDeck.Count, this);
     }
 }
