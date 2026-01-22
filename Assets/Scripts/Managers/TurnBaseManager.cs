@@ -38,6 +38,8 @@ public class TurnBaseManager : MonoBehaviour
             {
                 timeCounter = 0f;
                 //玩家回合开始
+                PlayerTurnBegin();
+                isPlayerTurn = false;
             }
         }
     }

@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 477832243}
   - component: {fileID: 477832245}
   - component: {fileID: 477832246}
+  - component: {fileID: 477832247}
   m_Layer: 0
   m_Name: CardDeck
   m_TagString: Untagged
@@ -370,6 +371,34 @@ MonoBehaviour:
       - m_Target: {fileID: 477832243}
         m_TargetAssemblyTypeName: CardDeck, Assembly-CSharp
         m_MethodName: NewTurnDrawCards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &477832247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477832242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7f137603d8f3e4b9e9991f86023a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectEventListener
+  eventSO: {fileID: 11400000, guid: cb8e3058e60b96145a4ddc3ea945e89c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477832243}
+        m_TargetAssemblyTypeName: CardDeck, Assembly-CSharp
+        m_MethodName: OnPlayerTurnEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -822,6 +851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428413451}
   - component: {fileID: 1428413450}
+  - component: {fileID: 1428413452}
   m_Layer: 0
   m_Name: TurnBase Manager
   m_TagString: Untagged
@@ -862,6 +892,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1428413452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428413449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7f137603d8f3e4b9e9991f86023a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectEventListener
+  eventSO: {fileID: 11400000, guid: cb8e3058e60b96145a4ddc3ea945e89c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1428413450}
+        m_TargetAssemblyTypeName: TurnBaseManager, Assembly-CSharp
+        m_MethodName: EnemyTurnBegin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1565678552
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de736440891cabd419b0dc62a94f26fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayPanel
+  playerTurnEndEvent: {fileID: 11400000, guid: cb8e3058e60b96145a4ddc3ea945e89c, type: 2}
 --- !u!114 &1610461323
 MonoBehaviour:
   m_ObjectHideFlags: 0

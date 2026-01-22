@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class GameplayPanel : MonoBehaviour
 {
+    [Header("事件广播")]
+    public ObjectEventSO playerTurnEndEvent;
     private VisualElement rootElement;
     private Label energyAmountLabel, drawAmountLabel, discardAmountLabel, turnLabel;
     private Button endTurnButton;
@@ -17,10 +20,17 @@ public class GameplayPanel : MonoBehaviour
         turnLabel = rootElement.Q<Label>("TurnLabel");
         endTurnButton = rootElement.Q<Button>("EndTurn");
 
+        endTurnButton.clicked += OnEndTurnButtonClicked;
+
         drawAmountLabel.text = "0";
         discardAmountLabel.text = "0";
         energyAmountLabel.text = "0";
         turnLabel.text = "游戏开始";
+    }
+
+    private void OnEndTurnButtonClicked()
+    {
+        playerTurnEndEvent.RaiseEvent(null, this);
     }
 
     public void UpdateDrawDeckAmount(int amount)

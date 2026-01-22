@@ -128,4 +128,17 @@ public class CardDeck : MonoBehaviour
         SetCardLayout(0f);
         discardCountEvent.RaiseEvent(discardDeck.Count, this);
     }
+    /// <summary>
+    /// ÊÂ¼þ¼àÌýº¯Êý
+    /// </summary>
+    public void OnPlayerTurnEnd()
+    {
+        for (int i = 0; i < handCardObjectList.Count; i++)
+        {
+            discardDeck.Add(handCardObjectList[i].cardData);
+            cardManager.DiscardCard(handCardObjectList[i].gameObject);
+        }
+        handCardObjectList.Clear();
+        discardCountEvent.RaiseEvent(discardDeck.Count, this);
+    }
 }
