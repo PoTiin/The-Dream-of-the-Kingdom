@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class CardDeck : MonoBehaviour
 {
+    //public Player player;
     public CardManager cardManager;
     public CardLayoutManager layoutManager;
 
@@ -86,6 +87,9 @@ public class CardDeck : MonoBehaviour
             Card currentCard = handCardObjectList[i];
             CardTransform cardTransform = layoutManager.GetCardTransform(i, handCardObjectList.Count);
             //currentCard.transform.SetPositionAndRotation(cardTransform.pos, cardTransform.rotation);
+
+            //¿¨ÅÆÄÜÁ¿ÅÐ¶Ï
+            currentCard.UpdateCardState();
 
             currentCard.isAnimating = true;
             currentCard.transform.DOScale(Vector3.one, 0.2f).SetDelay(delay).onComplete = () =>

@@ -25,6 +25,8 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!currentCard.isAvailable)
+            return;
         switch (currentCard.cardData.cardType)
         {
             case CardType.Attack:
@@ -41,6 +43,8 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!currentCard.isAvailable)
+            return;
         if (canMove)
         {
             currentCard.isAnimating = true;
@@ -66,6 +70,8 @@ public class CardDragHandler : MonoBehaviour,IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!currentCard.isAvailable)
+            return;
         if (currentArrow)
         {
             Destroy(currentArrow);

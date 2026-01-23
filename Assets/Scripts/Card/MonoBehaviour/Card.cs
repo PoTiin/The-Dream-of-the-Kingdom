@@ -17,9 +17,13 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 
     public bool isAnimating = false;
 
+    public bool isAvailable;
+
     public Player player;
     [Header("广播事件")]
     public ObjectEventSO discardCardEvent;
+
+    public IntEventSO costEvent;
     private void Start()
     {
         Init(cardData);
@@ -75,10 +79,17 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     public void ExecuteCardEffects(CharacterBase from,CharacterBase target)
     {
         //TODO:减少对应能量，通知回收卡牌
+        costEvent.RaiseEvent(cardData.cost, this);
         discardCardEvent.RaiseEvent(this, this);
         foreach (var effect in cardData.effects)
         {
             effect.Execute(from, target);
         }
+    }
+
+    public void UpdateCardState()
+    {
+        isAvailable = cardData.cost <= player.CurrentMana;
+        costText.color = isAvailable ? Color.green : Color.red;
     }
 }

@@ -11,10 +11,15 @@ public class HealthBarController : MonoBehaviour
 
     private ProgressBar healthBar;
 
+    private VisualElement defenseElement;
+    private Label defenseAmountLabel;
+
     private void Awake()
     {
         currentCharacter = GetComponent<CharacterBase>();
         
+
+
     }
     private void Start()
     {
@@ -34,6 +39,11 @@ public class HealthBarController : MonoBehaviour
         healthBar = healthBarDocument.rootVisualElement.Q<ProgressBar>("HealthBar");
         healthBar.highValue = currentCharacter.MaxHP;
         MoveToWorldPosition(healthBar, healthBarTransform.position, Vector2.zero);
+
+        defenseElement = healthBar.Q<VisualElement>("Defense");
+        defenseAmountLabel = defenseElement.Q<Label>("DefenseAmount");
+
+        defenseElement.style.display = DisplayStyle.None;
     }
     private void Update()
     {
@@ -67,6 +77,9 @@ public class HealthBarController : MonoBehaviour
             {
                 healthBar.AddToClassList("highHealth");
             }
+            //·ÀÓùÊôÐÔ¸üÐÂ
+            defenseElement.style.display = currentCharacter.defense.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
+            defenseAmountLabel.text = currentCharacter.defense.currentValue.ToString();
         }
     }
 }

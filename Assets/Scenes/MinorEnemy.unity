@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHp: 50
   hp: {fileID: 11400000, guid: 8b5b2cab10e9d37438205f1b64560699, type: 2}
+  defense: {fileID: 11400000, guid: 3782263074e467741b2291c6ad5ed6ea, type: 2}
   isDead: 0
 --- !u!114 &955674452
 MonoBehaviour:
