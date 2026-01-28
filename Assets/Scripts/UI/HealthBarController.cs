@@ -1,4 +1,4 @@
-using NUnit.Framework.Internal;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,11 +14,22 @@ public class HealthBarController : MonoBehaviour
     private VisualElement defenseElement;
     private Label defenseAmountLabel;
 
+    private VisualElement buffElement;
+    private Label buffRound;
+    [Header("Buff Sprite")]
+    public Sprite buffSprite;
+
+    public Sprite debuffSprite;
+
+    private Enemy enemy;
+
+    private VisualElement intentSprite;
+    private Label intentAmount;
+
     private void Awake()
     {
         currentCharacter = GetComponent<CharacterBase>();
-        
-
+        enemy = GetComponent<Enemy>();
 
     }
     private void Start()
@@ -44,6 +55,15 @@ public class HealthBarController : MonoBehaviour
         defenseAmountLabel = defenseElement.Q<Label>("DefenseAmount");
 
         defenseElement.style.display = DisplayStyle.None;
+
+        buffElement = healthBar.Q<VisualElement>("Buff");
+        buffRound = buffElement.Q<Label>("BuffRound");
+
+        buffElement.style.display = DisplayStyle.None;
+
+        intentSprite = healthBar.Q<VisualElement>("Intent");
+        intentAmount = intentSprite.Q<Label>("IntentAmount");
+        intentSprite.style.display = DisplayStyle.None;
     }
     private void Update()
     {
@@ -80,6 +100,34 @@ public class HealthBarController : MonoBehaviour
             //防御属性更新
             defenseElement.style.display = currentCharacter.defense.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
             defenseAmountLabel.text = currentCharacter.defense.currentValue.ToString();
+
+            //buff回合更新
+            buffElement.style.display = currentCharacter.buffRound.currentValue > 0 ? DisplayStyle.Flex : DisplayStyle.None;
+            buffRound.text = currentCharacter.buffRound.currentValue.ToString();
+            buffElement.style.backgroundImage = currentCharacter.baseStrength > 1 ? new StyleBackground(buffSprite) : new StyleBackground(debuffSprite);
         }
     }
+
+    public void SetIntentElement()
+    {
+        intentSprite.style.display = DisplayStyle.Flex;
+        intentSprite.style.backgroundImage = new StyleBackground(enemy.currentAction.intentSprite);
+
+        //判断是否是攻击
+        var value = enemy.currentAction.effect.value;
+        if(enemy.currentAction.effect.GetType() == typeof(DamageEffect))
+        {
+            value = (int)math.round(enemy.currentAction.effect.value * enemy.baseStrength);
+        }
+
+        intentAmount.text = value.ToString();
+    }
+    /// <summary>
+    /// 敌人回合结束之后
+    /// </summary>
+    public void HideIntentElement()
+    {
+        intentSprite.style.display = DisplayStyle.None;
+    }
+
 }

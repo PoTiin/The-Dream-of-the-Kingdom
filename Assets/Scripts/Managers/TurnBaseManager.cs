@@ -67,4 +67,6 @@ public class TurnBaseManager : MonoBehaviour
         isEnemyTurn = false;
         enemyTurnEnd.RaiseEvent(null, this);
     }
+
+    
 }

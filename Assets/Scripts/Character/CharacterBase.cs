@@ -6,6 +6,8 @@ public class CharacterBase : MonoBehaviour
     public IntVariable hp;
 
     public IntVariable defense;
+
+    public IntVariable buffRound;
     public int CurrentHP
     {
         get => hp.currentValue;
@@ -21,6 +23,14 @@ public class CharacterBase : MonoBehaviour
 
     protected Animator animator;
     public bool isDead;
+
+    public GameObject buff;
+    public GameObject debuff;
+
+    //力量有关
+    public float baseStrength = 1f;
+
+    private float strengthEffect = 0.5f;
     protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -29,6 +39,8 @@ public class CharacterBase : MonoBehaviour
     {
         hp.maxValue = maxHp;
         CurrentHP = MaxHP;
+
+        buffRound.currentValue = buffRound.maxValue;
 
         ResetDefense();
     }
@@ -57,8 +69,46 @@ public class CharacterBase : MonoBehaviour
         defense.SetValue(value);
     }
 
+    public void HealHealth(int amount)
+    {
+        CurrentHP = Mathf.Min(MaxHP,CurrentHP + amount);
+        buff.SetActive(true);
+    }
     public void ResetDefense()
     {
         defense.SetValue(0);
+    }
+
+    public void SetupStrength(int round, bool isPositive)
+    {
+        if (isPositive)
+        {
+            float newStrength = baseStrength + strengthEffect;
+            baseStrength = Mathf.Min(newStrength, 1.5f);
+            buff.SetActive(true);
+        }
+        else
+        {
+            debuff.SetActive(true);
+            baseStrength = 1 - strengthEffect;
+        }
+        var currentRound = buffRound.currentValue + round;
+
+        if (baseStrength == 1)
+            buffRound.SetValue(0);
+        else
+            buffRound.SetValue(currentRound);
+    }
+    /// <summary>
+    /// 回合转换事件函数
+    /// </summary>
+    public void UpdateStrengthRound()
+    {
+        buffRound.SetValue(buffRound.currentValue - 1);
+        if(buffRound.currentValue <= 0)
+        {
+            buffRound.SetValue(0);
+            baseStrength = 1;
+        }
     }
 }
