@@ -16,7 +16,7 @@ MonoBehaviour:
   - intentSprite: {fileID: 21300000, guid: 98d622e3aaa3e464a933a2720153fdae, type: 3}
     effect: {fileID: 11400000, guid: c40ae6c6161d2744abab9ff4057d37d4, type: 2}
   - intentSprite: {fileID: 21300000, guid: a34550cedb3234dc085a67e7fb9bf5c8, type: 3}
-    effect: {fileID: 11400000, guid: c40ae6c6161d2744abab9ff4057d37d4, type: 2}
+    effect: {fileID: 11400000, guid: df0de263f0074cf44a6d4e0888e033a2, type: 2}
   - intentSprite: {fileID: 21300000, guid: a34550cedb3234dc085a67e7fb9bf5c8, type: 3}
     effect: {fileID: 11400000, guid: c1b81618a1798864abfa9a7622d2fcba, type: 2}
   - intentSprite: {fileID: 21300000, guid: e60462361db3140c59c13b7122a2106c, type: 3}

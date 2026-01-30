@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TurnBaseManager : MonoBehaviour
 {
+    public GameObject playerObj;
     private bool isPlayerTurn = false;
     private bool isEnemyTurn = false;
     public bool battleEnd = true;
@@ -21,7 +22,7 @@ public class TurnBaseManager : MonoBehaviour
         if (isEnemyTurn)
         {
             timeCounter += Time.deltaTime;
-            if(timeCounter >= enemyTurnDuration)
+            if (timeCounter >= enemyTurnDuration)
             {
                 timeCounter = 0f;
                 //敌人回合结束
@@ -34,7 +35,7 @@ public class TurnBaseManager : MonoBehaviour
         if (isPlayerTurn)
         {
             timeCounter += Time.deltaTime;
-            if(timeCounter >= playerTurnDuration)
+            if (timeCounter >= playerTurnDuration)
             {
                 timeCounter = 0f;
                 //玩家回合开始
@@ -60,7 +61,7 @@ public class TurnBaseManager : MonoBehaviour
     {
         isEnemyTurn = true;
         enemyTurnBegin.RaiseEvent(null, this);
-}
+    }
 
     public void EnemyTurnEnd()
     {
@@ -68,5 +69,28 @@ public class TurnBaseManager : MonoBehaviour
         enemyTurnEnd.RaiseEvent(null, this);
     }
 
-    
+    public void OnRoomLoadedEvent(object obj)
+    {
+        Room room = obj as Room;
+        switch (room.roomData.roomType)
+        {
+            case RoomType.MinorEnemy:
+            case RoomType.EliteEnemy:
+            case RoomType.Boss:
+                playerObj.SetActive(true);
+                GameStart();
+                break;
+            case RoomType.Shop:
+            case RoomType.Treasure:
+                playerObj.SetActive(false);
+                break;
+            case RoomType.RestRoom:
+                playerObj.SetActive(true);
+                break;
+            
+            default:
+                break;
+        }
+    }
+
 }
