@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     public GameObject gameWinPanel;
     public GameObject gameOverPanel;
 
+    public GameObject pickCardPanel;
+
     /// <summary>
     /// 在房间加载事件中监听
     /// </summary>
@@ -48,5 +50,14 @@ public class UIManager : MonoBehaviour
     {
         gameplayPanel.SetActive(false);
         gameOverPanel.SetActive(true);
+    }
+
+    public void OnPickCardEvent()
+    {
+        pickCardPanel.SetActive(true);
+    }
+    public void OnFinishPickCardEvent()
+    {
+        pickCardPanel.SetActive(false);
     }
 }

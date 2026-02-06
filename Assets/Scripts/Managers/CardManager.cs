@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -13,6 +12,8 @@ public class CardManager : MonoBehaviour
 
     public CardLibrarySO newGameCardLibrary;
     public CardLibrarySO currentLibrary;
+
+    private int previousIndex;
 
 
     private void Awake()
@@ -65,4 +66,41 @@ public class CardManager : MonoBehaviour
         poolTool.ReleaseObjectToPool(obj);
     }
 
+    public CardDataSO GetNewCardData()
+    {
+        var randomIndex = 0;
+        do
+        {
+            randomIndex = Random.Range(0, cardDataList.Count);
+        } while (previousIndex == randomIndex);
+
+        previousIndex = randomIndex;
+        return cardDataList[randomIndex];
+    }
+
+    /// <summary>
+    /// ½âËøÐÂ¿¨ÅÆ
+    /// </summary>
+    /// <param name="newCardData"></param>
+    public void UnlockCard(CardDataSO newCardData)
+    {
+        var newCard = new CardLibraryEntry
+        {
+            cardData = newCardData,
+            amount = 1,
+        };
+        if (currentLibrary.cardLibraryList.Contains(newCard))
+        {
+            int targetIndex = currentLibrary.cardLibraryList.FindIndex(t => t.cardData == newCardData);
+            CardLibraryEntry ce = new CardLibraryEntry();
+            ce.amount = currentLibrary.cardLibraryList[targetIndex].amount + 1;
+            ce.cardData = currentLibrary.cardLibraryList[targetIndex].cardData;
+            currentLibrary.cardLibraryList[targetIndex] = ce;
+            //target.amount++;
+        }
+        else
+        {
+            currentLibrary.cardLibraryList.Add(newCard);
+        }
+    }
 }

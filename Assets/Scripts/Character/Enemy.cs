@@ -53,7 +53,6 @@ public class Enemy : CharacterBase
     protected override void Update()
     {
         base.Update();
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
     IEnumerator ProcessDelayAction(string actionName)
     {

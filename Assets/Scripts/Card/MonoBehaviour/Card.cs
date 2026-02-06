@@ -89,7 +89,12 @@ public class Card : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 
     public void UpdateCardState()
     {
+        Debug.Log(player.CurrentMana);
         isAvailable = cardData.cost <= player.CurrentMana;
         costText.color = isAvailable ? Color.green : Color.red;
+    }
+    private void Update()
+    {
+        Debug.Log("Update:"+player.CurrentMana);
     }
 }

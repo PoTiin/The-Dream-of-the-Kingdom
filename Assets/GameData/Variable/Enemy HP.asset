@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Enemy HP
   m_EditorClassIdentifier: Assembly-CSharp::IntVariable
   maxValue: 50
-  currentValue: 46
+  currentValue: 0
   ValueChangedEvent: {fileID: 11400000, guid: eb375ea61fe08774ab8ed32826f46d5e, type: 2}
   description: "\u654C\u4EBAHP"
