@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     public void UpdateMapLayoutData(object value)
     {
         Vector2Int roomVector = (Vector2Int)value;
+        if (mapLayout.mapRoomDataList.Count == 0)
+            return;
         var currentRoom = mapLayout.mapRoomDataList.Find(r => r.colum == roomVector.x && r.line == roomVector.y);
+
         currentRoom.roomState = RoomState.Visited;
 
         //更新相邻房间的数据
@@ -68,5 +71,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         eventSO?.RaiseEvent(null, this);
+    }
+
+    public void OnNewGameEvent()
+    {
+        mapLayout.mapRoomDataList.Clear();
+        mapLayout.linePositionList.Clear();
     }
 }
