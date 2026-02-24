@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Player HP
   m_EditorClassIdentifier: Assembly-CSharp::IntVariable
   maxValue: 60
-  currentValue: 42
+  currentValue: 60
   ValueChangedEvent: {fileID: 11400000, guid: fc7468fdb7e15364cb5cbcdadbb20f0a, type: 2}
   description: Player HP

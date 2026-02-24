@@ -44,7 +44,6 @@ public class CharacterBase : MonoBehaviour
         CurrentHP = MaxHP;
 
         buffRound.currentValue = buffRound.maxValue;
-
         ResetDefense();
     }
 

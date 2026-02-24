@@ -16,7 +16,7 @@ public class SceneLoadManager : MonoBehaviour
     public ObjectEventSO afterRoomLoadedEvent;
     public ObjectEventSO updateRoomEvent;
 
-    private void Start()
+    private void Awake()
     {
         currentRoomVector = Vector2Int.one * -1;
         LoadMenu();

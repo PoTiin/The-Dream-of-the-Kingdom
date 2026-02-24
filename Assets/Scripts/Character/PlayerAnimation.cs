@@ -51,4 +51,9 @@ public class PlayerAnimation : MonoBehaviour
                 break;
         }
     }
+
+    public void SetSleepAnimation()
+    {
+        animator.Play("death");
+    }
 }

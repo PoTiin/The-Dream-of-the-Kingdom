@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject pickCardPanel;
 
+    public GameObject restRoomPanel;
+
     /// <summary>
     /// 在房间加载事件中监听
     /// </summary>
@@ -28,6 +30,7 @@ public class UIManager : MonoBehaviour
             case RoomType.Treasure:
                 break;
             case RoomType.RestRoom:
+                restRoomPanel.SetActive(true);
                 break;
         }
     }
@@ -39,6 +42,7 @@ public class UIManager : MonoBehaviour
         gameplayPanel.SetActive(false);
         gameOverPanel.SetActive(false);
         gameWinPanel.SetActive(false);
+        restRoomPanel.SetActive(false);
     }
 
     public void OnGameWinEvent()

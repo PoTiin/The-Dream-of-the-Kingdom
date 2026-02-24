@@ -32,7 +32,7 @@ public class HealthBarController : MonoBehaviour
         enemy = GetComponent<Enemy>();
 
     }
-    private void Start()
+    private void OnEnable()
     {
         InitHealthBar();
     }
