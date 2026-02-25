@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8ee4b4ab5e4264d9e979adcf2ee6c4, type: 3}
+  m_Name: BossActionDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyActionDataSO
+  actions:
+  - intentSprite: {fileID: 21300000, guid: 98d622e3aaa3e464a933a2720153fdae, type: 3}
+    effect: {fileID: 11400000, guid: c40ae6c6161d2744abab9ff4057d37d4, type: 2}
+  - intentSprite: {fileID: 21300000, guid: a34550cedb3234dc085a67e7fb9bf5c8, type: 3}
+    effect: {fileID: 11400000, guid: df0de263f0074cf44a6d4e0888e033a2, type: 2}
+  - intentSprite: {fileID: 21300000, guid: a34550cedb3234dc085a67e7fb9bf5c8, type: 3}
+    effect: {fileID: 11400000, guid: c1b81618a1798864abfa9a7622d2fcba, type: 2}
+  - intentSprite: {fileID: 21300000, guid: a34550cedb3234dc085a67e7fb9bf5c8, type: 3}
+    effect: {fileID: 11400000, guid: c62a45e52581fc2478f33d64f1741b05, type: 2}
+  - intentSprite: {fileID: 21300000, guid: e60462361db3140c59c13b7122a2106c, type: 3}
+    effect: {fileID: 11400000, guid: ba24614d2053a26448f94c6e72555ab8, type: 2}
+  - intentSprite: {fileID: 21300000, guid: e60462361db3140c59c13b7122a2106c, type: 3}
+    effect: {fileID: 11400000, guid: 2dc47bf31b57f7f439df14143b671959, type: 2}
+  - intentSprite: {fileID: 21300000, guid: d7f03361f8c0a4e1293a0b3eb59d0320, type: 3}
+    effect: {fileID: 11400000, guid: 3dcb98dd08394384b81c24096f3df760, type: 2}
+  - intentSprite: {fileID: 21300000, guid: d7f03361f8c0a4e1293a0b3eb59d0320, type: 3}
+    effect: {fileID: 11400000, guid: 0aa3de3896e974b458cc0a78efabdccb, type: 2}
+  - intentSprite: {fileID: 21300000, guid: 810448b82870c45058f8b2de5423274a, type: 3}
+    effect: {fileID: 11400000, guid: e6d333a8c167c014dad9ee2ac26f41dc, type: 2}
+  - intentSprite: {fileID: 21300000, guid: 810448b82870c45058f8b2de5423274a, type: 3}
+    effect: {fileID: 11400000, guid: 16f04ebd2b1723040be57061b39f4c02, type: 2}

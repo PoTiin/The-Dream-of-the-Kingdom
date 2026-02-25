@@ -54,7 +54,11 @@ public class GameManager : MonoBehaviour
             //发出失败的通知
             StartCoroutine(EventDelayAction(gameOverEvent));
         }
-        if(character is Enemy)
+        if (character is Boss)
+        {
+            StartCoroutine(EventDelayAction(gameOverEvent));
+        }
+        else if (character is Enemy)
         {
             aliveEnemyList.Remove(character as Enemy);
 
@@ -64,6 +68,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(EventDelayAction(gameWinEvent));
             }
         }
+        
 
     }
 
