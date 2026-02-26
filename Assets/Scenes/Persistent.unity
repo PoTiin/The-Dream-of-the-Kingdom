@@ -1453,6 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a509883f4332b5749a1e0ffc65b928b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoadManager
+  fadePanel: {fileID: 1042323219}
   map:
     m_AssetGUID: 5cf5076a603c0cc438796e3fbe86cafd
     m_SubObjectName: 
@@ -1461,6 +1462,12 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   menu:
     m_AssetGUID: ee196c70bdb3bc94db9d2eebdc25949a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  intro:
+    m_AssetGUID: ceb5b4ecb753449bfa333c67d9183401
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
@@ -1551,6 +1558,74 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1042323216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042323217}
+  - component: {fileID: 1042323218}
+  - component: {fileID: 1042323219}
+  m_Layer: 0
+  m_Name: Fade Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1042323217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042323216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.05325, y: 2.65258, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1042323218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042323216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: e9e640b9813da5f48acd61b635c91b76, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: e745be4124bac81418f27f899a8e0ec4, type: 3}
+  m_SortingOrder: 20
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &1042323219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042323216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d350ab60c985554c899b4f2bb9e0b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadePanel
 --- !u!1 &1201460912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7f137603d8f3e4b9e9991f86023a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectEventListener
-  eventSO: {fileID: 11400000, guid: 2538c8f642dc15d44ab939cf7b6aeb90, type: 2}
+  eventSO: {fileID: 11400000, guid: 59ef39ad45c12b0468f5f1966b43df82, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -2913,3 +2988,4 @@ SceneRoots:
   - {fileID: 797585769}
   - {fileID: 1601363085}
   - {fileID: 738056293}
+  - {fileID: 1042323217}

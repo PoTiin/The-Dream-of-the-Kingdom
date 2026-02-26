@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadManager : MonoBehaviour
 {
+    public FadePanel fadePanel;
     private AssetReference currentScene;
     public AssetReference map;
     public AssetReference menu;
+
+    public AssetReference intro;
 
     private Vector2Int currentRoomVector;
     private Room currentRoom = null;
@@ -19,7 +22,8 @@ public class SceneLoadManager : MonoBehaviour
     private void Awake()
     {
         currentRoomVector = Vector2Int.one * -1;
-        LoadMenu();
+        //LoadMenu();
+        LoadIntro();
     }
 
     /// <summary>
@@ -52,12 +56,15 @@ public class SceneLoadManager : MonoBehaviour
         await s.Task;
         if(s.Status == AsyncOperationStatus.Succeeded)
         {
+            fadePanel.FadeOut(0.2f);
             SceneManager.SetActiveScene(s.Result.Scene);
         }
     }
     private async Awaitable UnloadSceneTask()
     {
-        await SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        fadePanel.FadeIn(0.4f);
+        await Awaitable.WaitForSecondsAsync(0.45f);
+        await Awaitable.FromAsyncOperation(SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()));
     }
     /// <summary>
     /// 监听返回房间的事件函数
@@ -78,6 +85,13 @@ public class SceneLoadManager : MonoBehaviour
         if(currentScene != null)
             await UnloadSceneTask();
         currentScene = menu;
+        await LoadSceneTask();
+    }
+    public async void LoadIntro()
+    {
+        if (currentScene != null)
+            await UnloadSceneTask();
+        currentScene = intro;
         await LoadSceneTask();
     }
 }
