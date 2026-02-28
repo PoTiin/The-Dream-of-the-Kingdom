@@ -15,16 +15,16 @@ MonoBehaviour:
   roomBlueprints:
   - min: 2
     max: 5
-    roomType: 8
+    roomType: 1
   - min: 2
     max: 5
-    roomType: 24
-  - min: 2
-    max: 5
-    roomType: 22
+    roomType: 3
   - min: 2
     max: 5
     roomType: 30
+  - min: 2
+    max: 5
+    roomType: 28
   - min: 3
     max: 5
     roomType: 10

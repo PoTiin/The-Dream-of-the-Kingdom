@@ -59,6 +59,7 @@ public class UIManager : MonoBehaviour
     public void OnPickCardEvent()
     {
         pickCardPanel.SetActive(true);
+        Debug.Log("¿ªÆôÑ¡Ôñ¿¨ÅÆ");
     }
     public void OnFinishPickCardEvent()
     {
